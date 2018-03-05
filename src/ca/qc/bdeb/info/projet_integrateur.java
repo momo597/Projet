@@ -19,6 +19,7 @@ public class projet_integrateur {
         System.out.println("WASSUP");
         System.out.println("wo");
         System.out.println("allooooo");
+        int a=3;
     }
     
 }
