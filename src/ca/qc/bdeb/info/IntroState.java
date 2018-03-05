@@ -42,12 +42,13 @@ public class IntroState extends BasicGameState {
         if (key == Input.KEY_SPACE) {
             showAll();
         }
-        if(finished=true){
-            if(key==Input.KEY_ENTER){
+        if (finished == true) {
+            if (key == Input.KEY_ENTER) {
                 game.enterState(MapGameState.ID);
             }
         }
     }
+
     public void showAll() {
         if (lines.isEmpty()) {
             renderRow = renderCol = 0;
@@ -174,4 +175,3 @@ public class IntroState extends BasicGameState {
         return list;
     }
 }
-

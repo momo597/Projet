@@ -34,10 +34,10 @@ public class MainScreenGameState extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
-        this.background = new Image("C:\\Users\\USER\\Documents\\NetBeansProjects\\Learn_Slick2D\\src\\learn_slick2d\\res\\background\\ecran_principal.jpg");
+        this.background = new Image("H:\\Projet Intégrateur\\src\\ca\\qc\\bdeb\\info\\res\\background\\ecran_principal.jpg");
         try {
             UIFont1 = java.awt.Font.createFont(java.awt.Font.TRUETYPE_FONT,
-                    org.newdawn.slick.util.ResourceLoader.getResourceAsStream("C:\\Users\\USER\\Documents\\NetBeansProjects\\Learn_Slick2D\\src\\learn_slick2d\\res\\font\\SFOuterLimits.ttf"));
+                    org.newdawn.slick.util.ResourceLoader.getResourceAsStream("H:\\Projet Intégrateur\\src\\ca\\qc\\bdeb\\info\\res\\font\\SFOuterLimits.ttf"));
             UIFont1 = UIFont1.deriveFont(java.awt.Font.PLAIN, 30.f); //You can change "PLAIN" to "BOLD" or "ITALIC"... and 16.f is the size of your font
 
             uniFont = new org.newdawn.slick.UnicodeFont(UIFont1);
