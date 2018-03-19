@@ -22,6 +22,7 @@ import org.newdawn.slick.tiled.TiledMap;
  * @author 1624013
  */
 public class MapGameState extends BasicGameState {
+//
 
     public static final int ID = 2;
     private GameContainer container;
@@ -31,18 +32,21 @@ public class MapGameState extends BasicGameState {
     private boolean moving = false;
     private float xCamera = x, yCamera = y;
     private Animation[] animations = new Animation[8];
+    private Image robot;
 
     @Override
     public int getID() {
         return ID;
     }
+//
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.container = container;
-        this.map = new TiledMap("H:\\Projet Intégrateur\\src\\ca\\qc\\bdeb\\info\\res\\map\\map2.essai.tmx");
-        SpriteSheet spriteSheet = new SpriteSheet(("H:\\Projet Intégrateur\\src\\ca\\qc\\bdeb\\info\\res\\map\\sprites\\people\\soldier_altcolor.png"), 64, 64);
+        this.map = new TiledMap("ca/qc/bdeb/info/res/map/lobby.tmx");
+        SpriteSheet spriteSheet = new SpriteSheet(("ca/qc/bdeb/info/res/map/sprites/people/soldier_altcolor.png"), 64, 64);
         Animation animation = new Animation();
+        robot = new Image("ca/qc/bdeb/info/res/map/sprites/people/robot.png");
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
         this.animations[2] = loadAnimation(spriteSheet, 0, 1, 2);
@@ -65,11 +69,13 @@ public class MapGameState extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         g.translate(container.getWidth() / 2 - (int) this.xCamera,
                 container.getHeight() / 2 - (int) this.yCamera);
-        this.map.render(0, 0);
+        this.map.render(0, 0, 0);
         g.setColor(new Color(0, 0, 0, .5f));
         g.fillOval(x - 16, y - 8, 32, 16);
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x - 32, y - 60);
+        robot.draw(170,80, 50,50);
     }
+//
 
     @Override
     public void keyReleased(int key, char c) {
@@ -130,6 +136,8 @@ public class MapGameState extends BasicGameState {
             } else {
                 this.x = futurX;
                 this.y = futurY;
+                System.out.println("X: "+this.x);
+                System.out.println("Y: "+this.y);
             }
         }
         int w = container.getWidth() / 4;
@@ -146,7 +154,7 @@ public class MapGameState extends BasicGameState {
         if (this.y < this.yCamera - h) {
             this.yCamera = this.y + h;
         }
-       
+
     }
 
     private boolean isCollision(float x, float y) {

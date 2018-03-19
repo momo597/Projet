@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="tiles/flesh.tsx"/>
+ <tileset firstgid="749" name="Logic" tilewidth="32" tileheight="32" tilecount="25" columns="5">
+  <image source="tiles/logic.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="774" name="Black" tilewidth="32" tileheight="32" tilecount="3600" columns="80">
+  <image source="tiles/Black.jpg" width="2560" height="1440"/>
+ </tileset>
+ <layer name="Calque de Tile 1" width="16" height="16">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACqWTSw4BQRCGq0diiTgEB7DwWks4gMQM9uw9Fl63wBmcAFcgTiLEDfwV1VHT00Fi8aUm1fNVV9f0pFNE6T8ZBURjMAF1Q1QGFYlVUDPJPEfrr+FtwBb0kQ9BJK5bO1Lr1t9j7QCOYIX8DMxB1yRrz9W69Rd4XpqXq/vlvFvb13+ovIYwVAwk6tod5Vel1x64g5uq0w7evjsL63flXXazWMuBUhDvg+u4syiZuJ8JXv7DxH12h55ZtB3/Kvsz9gx2/76Jz5nnP/Xsnxd/Jzn3zDz3AhEVKXn+CziDk8SG5/vzvWnCbXl8H/rM3+7PNz7dH32vf43//rfME7nAkFIABAAA
+  </data>
+ </layer>
+ <layer name="Logic" width="16" height="16" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACnvLxMDwloqYFECMfmLlKNFPrBvJ0U+M2cSaie4WdLWE4gGbPK30ExsuhPSTEv6U6sflPnrGPzn6KcEAAuCIHQAEAAA=
+  </data>
+ </layer>
+</map>

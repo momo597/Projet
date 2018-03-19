@@ -67,7 +67,6 @@ public class OptionsMenuState extends BasicGameState {
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         int posX = Mouse.getX();
         int posY = Mouse.getY();
-        System.out.println("X: " + posX + " Y:" + posY);
         if ((posX >= 470 && posX <= 766) && (posY >= 210 && posY <= 230)) {
             if (Mouse.isButtonDown(0)) {
                 game.enterState(IntroState.ID);
