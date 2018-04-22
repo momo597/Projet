@@ -5,6 +5,13 @@
  */
 package ca.qc.bdeb.info;
 
+import java.awt.Component;
+import java.awt.Dialog;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.nio.Buffer;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -73,7 +80,10 @@ public class MapGameState extends BasicGameState {
         g.setColor(new Color(0, 0, 0, .5f));
         g.fillOval(x - 16, y - 8, 32, 16);
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x - 32, y - 60);
-        robot.draw(170,80, 50,50);
+        robot.draw(170, 80, 50, 50);
+        int x = 200;
+        int y = 150;
+
     }
 //
 
@@ -136,8 +146,8 @@ public class MapGameState extends BasicGameState {
             } else {
                 this.x = futurX;
                 this.y = futurY;
-                System.out.println("X: "+this.x);
-                System.out.println("Y: "+this.y);
+                System.out.println("X: " + this.x);
+                System.out.println("Y: " + this.y);
             }
         }
         int w = container.getWidth() / 4;
@@ -161,11 +171,21 @@ public class MapGameState extends BasicGameState {
         int tileW = this.map.getTileWidth();
         int tileH = this.map.getTileHeight();
         int logicLayer = this.map.getLayerIndex("Logic");
+        int dialogLayer = this.map.getLayerIndex("dialog");
+        if (dialogLayer == 0) {
+
+            JOptionPane.showMessageDialog(null, "sup");
+            // new PhaseQuestion(null);
+
+        }
         Image tile = this.map.getTileImage((int) x / tileW, (int) y / tileH, logicLayer);
         boolean collision = tile != null;
         if (collision) {
             Color color = tile.getColor((int) x % tileW, (int) y % tileH);
             collision = color.getAlpha() > 0;
+
+            //new PhaseQuestion("9+10",0,"19","21","69","42",false,90);
+            new PhaseQuestion("9+10=19", 0, "Vrai", "Faux", null, null, true, 60);
         }
         return collision;
     }

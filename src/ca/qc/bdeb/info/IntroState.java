@@ -32,6 +32,7 @@ public class IntroState extends BasicGameState {
     private boolean finished = false;
     private Font font;
     private int width = 400;
+    private Color box = new Color(1f, 1f, 1f, 0.45f);
 
     @Override
     public int getID() {
@@ -63,7 +64,7 @@ public class IntroState extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         font = container.getDefaultFont();
-        String text = "Nous sommes en l'an 2040, le président des États-Unis "
+        String text = "Nous sommes en l'an 2040, le premier ministre du Canada "
                 + "est atteint d'un mal inconnu et intraitable. La technologie "
                 + "biomédicale a grandement avancé et le rétrécissement moléculaire "
                 + "est maintenant possible. C'est ainsi que Victor Krux, le meilleur "
@@ -75,12 +76,17 @@ public class IntroState extends BasicGameState {
                 + "le mal du président. Bonne Chance!\n\n "
                 + "Appuyez sur enter pour continuer";
         lines = wrap(text, font, width);
+
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         int x = 200;
         int y = 150;
+        int pad = 5;
+        g.setColor(box);
+        g.fillRect(x - pad, y - pad, width + pad * 2, 200 + pad * 2);
+
         g.setColor(Color.white);
         int lineHeight = font.getLineHeight();
 
